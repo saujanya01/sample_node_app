@@ -9,10 +9,9 @@ router.get("/", function (req, res, next) {
   });
 });
 
-router.get("/hello-from-nvim", (req, res)=>{
-    res.status(200).json({message: "this route was written in nvim"})
-}
-)
+router.get("/nvim", (req, res) => {
+  res.status(200).json({ message: "this route was written in nvim" });
+});
 
 router.get("/test", function (req, res, next) {
   res.status(200).json({ message: "Hello World!" });
