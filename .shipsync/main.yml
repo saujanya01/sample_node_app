@@ -1,0 +1,23 @@
+name: Node.js CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: alpine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout
+
+      - name: Set up Node.js
+        uses: actions/setup-node
+        with:
+          node-version: "18"
+
+      - name: Install Dependencies and run test
+        run: npm ci && npm t
+
+      - name: Run shell script
+        run: |
+          echo "Hello World testing pull request"
